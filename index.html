@@ -1,122 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mosab Awad | DevOps & Odoo Expert</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f4f6f8;
-      color: #333;
-      line-height: 1.6;
-    }
-    header {
-      background: #0d1117;
-      color: #fff;
-      padding: 2rem 1rem;
-      text-align: center;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 2.5rem;
-    }
-    header p {
-      font-size: 1.2rem;
-      color: #c9d1d9;
-    }
-    .container {
-      max-width: 960px;
-      margin: 2rem auto;
-      padding: 0 1rem;
-    }
-    .section {
-      margin-bottom: 2.5rem;
-    }
-    .section h2 {
-      border-left: 5px solid #007acc;
-      padding-left: 0.6rem;
-      color: #007acc;
-      font-size: 1.5rem;
-    }
-    .skills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-      margin-top: 1rem;
-    }
-    .tag {
-      background: #e1ecf4;
-      color: #0366d6;
-      padding: 0.4rem 0.75rem;
-      border-radius: 20px;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      font-size: 0.95rem;
-    }
-    a {
-      color: #0366d6;
-      text-decoration: none;
-    }
-    footer {
-      text-align: center;
-      padding: 2rem 1rem;
-      color: #555;
-      font-size: 0.9rem;
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <h1>Mosab Awad</h1>
-    <p>Head of IT · Odoo Developer · Docker Certified · Riyadh, Saudi Arabia</p>
-  </header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mosab Awad | Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  </head>
+  <body class="bg-gray-50 text-gray-900">
 
-  <div class="container">
-    <div class="section">
-      <h2>About Me</h2>
-      <p>I build professional Odoo websites and systems. I'm currently leading the IT department at <strong>وسطاء التسويق والخدمات المساندة</strong>. I’m passionate about DevOps and open source. Check out <a href="https://mass-co.sa" target="_blank">mass-co.sa</a> — an Odoo website I built for my company.</p>
-    </div>
+    <!-- HERO SECTION -->
+    <section style="min-height: 70vh;" class="flex items-center justify-center px-6">
+      <div class="max-w-6xl w-full grid md:grid-cols-2 gap-10 items-center">
 
-    <div class="section">
-      <h2>Skills</h2>
-      <div class="skills">
-        <div class="tag"><i class="fa-brands fa-linux"></i> Linux</div>
-        <div class="tag"><i class="fa-solid fa-terminal"></i> Bash</div>
-        <div class="tag"><i class="fa-brands fa-docker"></i> Docker</div>
-        <div class="tag"><i class="fa-brands fa-kubernetes"></i> Kubernetes</div>
-        <div class="tag"><i class="fa-solid fa-code"></i> Odoo</div>
-        <div class="tag"><i class="fa-brands fa-git-alt"></i> Git</div>
-        <div class="tag"><i class="fa-brands fa-github"></i> GitHub Actions</div>
-        <div class="tag"><i class="fa-solid fa-globe"></i> Web Dev</div>
-        <div class="tag"><i class="fa-solid fa-cogs"></i> DevOps</div>
+        <!-- Hero Text -->
+        <div>
+          <h1 class="text-4xl font-bold mb-3">Hi, I am Mosab Awad</h1>
+          <h2 class="text-2xl text-blue-600 font-semibold mb-1">Software Engineer</h2>
+          <p class="text-gray-600 mb-4">Head of IT Department at <a href="https://mass-co.sa" class="text-blue-500 underline" target="_blank">MASS</a></p>
+        </div>
+
+        <!-- Hero Image -->
+        <div class="flex justify-center">
+          <img src="mosabawad.jpeg" alt="Mosab Awad" class="rounded-full w-56 h-56 object-cover shadow-md" />
+        </div>
+
       </div>
-    </div>
+    </section>
 
-    <div class="section">
-      <h2>Projects</h2>
-      <ul>
-        <li><a href="https://github.com/MosabAwadAhmedAlhadi/ServerPerformanceStats" target="_blank"><strong>Server Stats</strong></a> – Real-time performance checker. CPU, memory, disk, and uptime.</li>
-        <li><a href="https://github.com/MosabAwadAhmedAlhadi/log-archive-tool" target="_blank"><strong>Log Archive Tool</strong></a> – Analyzes and compresses logs. tar, gzip, and scripting.</li>
-        <li><a href="https://github.com/MosabAwadAhmedAlhadi/nginx-log-analyser" target="_blank"><strong>Nginx Log Analyser</strong></a> – a shell script that analyse nginx log file, giving you insights of the top5 ip addresses, response code, user agent and pathes visited.</li>
-        <li><a href="https://github.com/MosabAwadAhmedAlhadi/gh-deployment-workflow" target="_blank"><strong>GitHub Pages Deploy</strong></a> – CI/CD pipeline with GitHub Actions.</li>
-      </ul>
-    </div>
+    <!-- SKILLS SECTION -->
+    <section class="bg-white py-12">
+      <div class="max-w-4xl mx-auto px-6">
+        <h2 class="text-2xl font-bold mb-6">Skills</h2>
+        <div class="flex flex-wrap gap-4">
+          <span class="bg-blue-100 text-blue-700 px-4 py-2 rounded-full flex items-center gap-2">
+            <i class="fas fa-terminal"></i> Bash
+          </span>
+          <span class="bg-green-100 text-green-700 px-4 py-2 rounded-full flex items-center gap-2">
+            <i class="fab fa-linux"></i> Linux
+          </span>
+          <span class="bg-yellow-100 text-yellow-700 px-4 py-2 rounded-full flex items-center gap-2">
+            <i class="fas fa-cogs"></i> Odoo
+          </span>
+          <span class="bg-blue-200 text-blue-800 px-4 py-2 rounded-full flex items-center gap-2">
+            <i class="fab fa-docker"></i> Docker
+          </span>
+          <span class="bg-indigo-100 text-indigo-700 px-4 py-2 rounded-full flex items-center gap-2">
+            <i class="fas fa-network-wired"></i> Kubernetes
+          </span>
+          <span class="bg-gray-200 text-gray-800 px-4 py-2 rounded-full flex items-center gap-2">
+            <i class="fab fa-git-alt"></i> Git
+          </span>
+          <span class="bg-pink-100 text-pink-700 px-4 py-2 rounded-full flex items-center gap-2">
+            <i class="fas fa-robot"></i> GitHub Actions
+          </span>
+        </div>
+      </div>
+    </section>
 
-    <div class="section">
-      <h2>Certifications</h2>
-      <ul>
-        <li> <i class="fa-brands fa-docker"></i> Docker Certified Associate</li>
-        <li>B.Sc. in Computer Science – Sudan University of Science & Technology</li>
-      </ul>
-    </div>
-  </div>
-
-  <footer>
-    &copy; 2025 Mosab Awad. All rights reserved.
-  </footer>
-</body>
+  </body>
 </html>
