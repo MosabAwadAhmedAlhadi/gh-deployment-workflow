@@ -5,56 +5,223 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mosab Awad | Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <style>
+      /* Floating Image Animation */
+      @keyframes float {
+        0% { transform: translateY(0px); }
+        50% { transform: translateY(-15px); }
+        100% { transform: translateY(0px); }
+      }
+      .float {
+        animation: float 2.5s ease-in-out infinite;
+      }
+
+      /* Fade In Animation */
+      @keyframes fadeInUp {
+        0% { opacity: 0; transform: translateY(20px); }
+        100% { opacity: 1; transform: translateY(0); }
+      }
+      .fade-in {
+        animation: fadeInUp 1s ease forwards;
+      }
+    </style>
   </head>
   <body class="bg-gray-50 text-gray-900">
+    <!-- HEADER -->
+<!-- HEADER -->
+<header class="bg-white shadow-md fixed top-0 left-0 w-full z-50">
+  <div class="max-w-4xl mx-auto px-6 py-4 flex items-center gap-2">
+    <!-- LinkedIn Icon -->
+    <a href="https://www.linkedin.com/in/mosab-awad" target="_blank" 
+       class="text-blue-600 hover:text-blue-800 text-2xl">
+      <i class="fab fa-linkedin"></i>
+    </a>
+
+    <!-- Name -->
+    <h1 class="text-xl font-bold text-gray-900">Mosab Awad</h1>
+  </div>
+</header>
+
+<!-- Spacer so content doesn't hide under header -->
+<div class="h-20"></div>
+
 
     <!-- HERO SECTION -->
-    <section style="min-height: 70vh;" class="flex items-center justify-center px-6">
-      <div class="max-w-6xl w-full grid md:grid-cols-2 gap-10 items-center">
-
+    <section style="min-height: 70vh;" class="flex items-center justify-center px-6 fade-in">
+      <div class="max-w-4xl w-full grid md:grid-cols-2 gap-10 items-center">
         <!-- Hero Text -->
-        <div>
+        <div class="fade-in" style="animation-delay: 0.2s;">
           <h1 class="text-4xl font-bold mb-3">Hi, I am Mosab Awad</h1>
-          <h2 class="text-2xl text-blue-600 font-semibold mb-1">Software Engineer</h2>
-          <p class="text-gray-600 mb-4">Head of IT Department at <a href="https://mass-co.sa" class="text-blue-500 underline" target="_blank">MASS</a></p>
+          <h2 class="text-2xl text-blue-600 font-semibold mb-1">Senior Odoo Developer & Head of IT</h2>
+          <p class="text-gray-600 mb-4">Riyadh, KSA | 
+            <a href="mailto:mosab.awad.ahmed.alhadi@gmail.com" class="underline">mosab.awad.ahmed.alhadi@gmail.com</a>
+          </p>
+          <p class="text-gray-600 mb-4">
+            Head of IT Department at <a href="https://mass-co.sa" class="text-blue-500 underline" target="_blank">MASS</a>
+          </p>
         </div>
-
         <!-- Hero Image -->
         <div class="flex justify-center">
-          <img src="mosabawad.jpeg" alt="Mosab Awad" class="rounded-full w-56 h-56 object-cover shadow-md" />
+          <img src="mosabawad.jpeg" alt="Mosab Awad" class="rounded-full w-56 h-56 object-cover shadow-md float" />
         </div>
-
       </div>
     </section>
 
-    <!-- SKILLS SECTION -->
-    <section class="bg-white py-12">
+    <!-- ABOUT ME -->
+    <section class="bg-white py-12 fade-in" style="animation-delay: 0.3s;">
+      <div class="max-w-4xl mx-auto px-6">
+        <h2 class="text-2xl font-bold mb-6">About Me</h2>
+        <p class="text-gray-700 leading-relaxed">
+          Accomplished Senior Odoo Developer & Head of IT with over 7 years of experience delivering scalable ERP solutions using Odoo versions 10 to 18.
+          Adept at developing custom modules, integrating third-party systems, and building responsive websites and portals.
+          Proven leadership in driving IT strategies, with hands-on expertise in both backend and frontend development.
+          Holder of a Docker Certified Associate, with a portfolio of successful projects in both public and private sectors.
+        </p>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section class="bg-gray-50 py-12 fade-in" style="animation-delay: 0.4s;">
       <div class="max-w-4xl mx-auto px-6">
         <h2 class="text-2xl font-bold mb-6">Skills</h2>
         <div class="flex flex-wrap gap-4">
-          <span class="bg-blue-100 text-blue-700 px-4 py-2 rounded-full flex items-center gap-2">
-            <i class="fas fa-terminal"></i> Bash
-          </span>
-          <span class="bg-green-100 text-green-700 px-4 py-2 rounded-full flex items-center gap-2">
-            <i class="fab fa-linux"></i> Linux
-          </span>
-          <span class="bg-yellow-100 text-yellow-700 px-4 py-2 rounded-full flex items-center gap-2">
-            <i class="fas fa-cogs"></i> Odoo
-          </span>
-          <span class="bg-blue-200 text-blue-800 px-4 py-2 rounded-full flex items-center gap-2">
-            <i class="fab fa-docker"></i> Docker
-          </span>
-          <span class="bg-indigo-100 text-indigo-700 px-4 py-2 rounded-full flex items-center gap-2">
-            <i class="fas fa-network-wired"></i> Kubernetes
-          </span>
-          <span class="bg-gray-200 text-gray-800 px-4 py-2 rounded-full flex items-center gap-2">
-            <i class="fab fa-git-alt"></i> Git
-          </span>
-          <span class="bg-pink-100 text-pink-700 px-4 py-2 rounded-full flex items-center gap-2">
-            <i class="fas fa-robot"></i> GitHub Actions
-          </span>
+          <span class="bg-blue-100 text-blue-700 px-4 py-2 rounded-full flex items-center gap-2"><i class="fas fa-terminal"></i> Bash</span>
+          <span class="bg-green-100 text-green-700 px-4 py-2 rounded-full flex items-center gap-2"><i class="fab fa-linux"></i> Linux</span>
+          <span class="bg-blue-500 text-blue-100 px-4 py-2 rounded-full flex items-center gap-2"><i class="fab fa-python"></i> Python</span>
+          <span class="bg-yellow-100 text-yellow-700 px-4 py-2 rounded-full flex items-center gap-2"><i class="fas fa-cogs"></i> Odoo</span>
+          <span class="bg-blue-200 text-blue-800 px-4 py-2 rounded-full flex items-center gap-2"><i class="fab fa-docker"></i> Docker</span>
+          <span class="bg-indigo-100 text-indigo-700 px-4 py-2 rounded-full flex items-center gap-2"><i class="fas fa-network-wired"></i> Kubernetes</span>
+          <span class="bg-gray-200 text-gray-800 px-4 py-2 rounded-full flex items-center gap-2"><i class="fab fa-git-alt"></i> Git</span>
+          <span class="bg-pink-100 text-pink-700 px-4 py-2 rounded-full flex items-center gap-2"><i class="fas fa-robot"></i> GitHub Actions</span>
+          <span class="bg-purple-100 text-purple-700 px-4 py-2 rounded-full flex items-center gap-2"><i class="fas fa-code"></i> JavaScript</span>
+          <span class="bg-orange-100 text-orange-700 px-4 py-2 rounded-full flex items-center gap-2"><i class="fas fa-file-code"></i> XML / QWeb</span>
         </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section class="bg-gray-50 py-12">
+      <div class="max-w-4xl mx-auto px-6">
+        <h2 class="text-2xl font-bold mb-6">Projects</h2>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+          <!-- Project 1 -->
+          <div class="bg-white rounded-lg shadow hover:shadow-lg transition overflow-hidden">
+            <img src="images/server-performance-stats.png" alt="Server Performance Stats" class="w-full h-40 object-cover">
+            <div class="p-6">
+              <h3 class="text-lg font-semibold mb-2">Server Performance Stats</h3>
+              <p class="text-gray-600 mb-4">Bash script to analyze CPU, memory, and disk usage, with extra system details.</p>
+              <a href="https://github.com/mosabawad/ServerPerformanceStats" 
+                class="text-blue-500 hover:underline" target="_blank">
+                View on GitHub
+              </a>
+            </div>
+          </div>
+
+          <!-- Project 2 -->
+          <div class="bg-white rounded-lg shadow hover:shadow-lg transition overflow-hidden">
+            <img src="images/log-archive-tool.png" alt="Log Archive Tool" class="w-full h-40 object-cover">
+            <div class="p-6">
+              <h3 class="text-lg font-semibold mb-2">Log Archive Tool</h3>
+              <p class="text-gray-600 mb-4">Automated log file archiving with date-based compression and tracking.</p>
+              <a href="https://github.com/mosabawad/LogArchiveTool" 
+                class="text-blue-500 hover:underline" target="_blank">
+                View on GitHub
+              </a>
+            </div>
+          </div>
+
+          <!-- Project 3 -->
+          <div class="bg-white rounded-lg shadow hover:shadow-lg transition overflow-hidden">
+            <img src="images/nginx-log-analyser.png" alt="Nginx Log Analyser" class="w-full h-40 object-cover">
+            <div class="p-6">
+              <h3 class="text-lg font-semibold mb-2">Nginx Log Analyser</h3>
+              <p class="text-gray-600 mb-4">Script to extract insights from Nginx access logs like top IPs, URLs, and user agents.</p>
+              <a href="https://github.com/mosabawad/nginx-log-analyser" 
+                class="text-blue-500 hover:underline" target="_blank">
+                View on GitHub
+              </a>
+            </div>
+          </div>
+
+          <!-- Project 4 -->
+          <div class="bg-white rounded-lg shadow hover:shadow-lg transition overflow-hidden">
+            <img src="images/github-actions-deployment.png" alt="GitHub Actions Deployment Workflow" class="w-full h-40 object-cover">
+            <div class="p-6">
+              <h3 class="text-lg font-semibold mb-2">GitHub Actions Deployment Workflow</h3>
+              <p class="text-gray-600 mb-4">Automated GitHub Pages deployment using GitHub Actions for a sample HTML site.</p>
+              <a href="https://github.com/mosabawad/github-actions-deployment" 
+                class="text-blue-500 hover:underline" target="_blank">
+                View on GitHub
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- EXPERIENCE -->
+    <section class="bg-white py-12 fade-in" style="animation-delay: 0.5s;">
+      <div class="max-w-4xl mx-auto px-6">
+        <h2 class="text-2xl font-bold mb-6">Professional Experience</h2>
+        <div class="space-y-6">
+          <div>
+            <h3 class="text-xl font-semibold">Head of IT Department - MASS-CO</h3>
+            <p class="text-gray-500">Riyadh, KSA | 2021 - Present</p>
+            <ul class="list-disc pl-5 text-gray-700 mt-2">
+              <li>Spearheaded Odoo implementation across departments.</li>
+              <li>Developed and customized the Odoo website and redesigned the default portal.</li>
+              <li>Led third-party system integrations and aligned Odoo with internal operations.</li>
+              <li>Provided strategic IT leadership and supervised a cross-functional team.</li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-xl font-semibold">Odoo Developer - Expert Co. Ltd</h3>
+            <p class="text-gray-500">Riyadh, KSA | 2019 - 2021</p>
+            <ul class="list-disc pl-5 text-gray-700 mt-2">
+              <li>Delivered tailored Odoo solutions for major clients and government sectors.</li>
+              <li>Enhanced ERP features for SOCPA and ensured system compliance.</li>
+              <li>Developed modules and automation for the Ekhaa Project.</li>
+              <li>Customized Odoo for the Ministry of Culture (via Tamkeen Technologies).</li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-xl font-semibold">Junior Odoo Developer - NCTR</h3>
+            <p class="text-gray-500">Khartoum, Sudan | 2018 - 2019</p>
+            <ul class="list-disc pl-5 text-gray-700 mt-2">
+              <li>Contributed to the Sudanese Zakat Chamber project from analysis to deployment.</li>
+              <li>Developed modules and conducted end-user training.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EDUCATION & CERTIFICATIONS -->
+    <section class="bg-gray-50 py-12 fade-in" style="animation-delay: 0.6s;">
+      <div class="max-w-4xl mx-auto px-6 grid md:grid-cols-2 gap-8">
+        <div>
+          <h2 class="text-2xl font-bold mb-4">Education</h2>
+          <p class="text-gray-700">Sudan University of Science and Technology</p>
+        </div>
+        <div>
+          <h2 class="text-2xl font-bold mb-4">Certifications</h2>
+          <p class="text-gray-700">Docker Certified Associate</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- LANGUAGES -->
+    <section class="bg-white py-12 fade-in" style="animation-delay: 0.7s;">
+      <div class="max-w-4xl mx-auto px-6">
+        <h2 class="text-2xl font-bold mb-4">Languages</h2>
+        <ul class="flex gap-6 text-gray-700">
+          <li>Arabic (Native)</li>
+          <li>English (Professional Proficiency)</li>
+        </ul>
       </div>
     </section>
 
