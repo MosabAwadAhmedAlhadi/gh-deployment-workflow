@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="theme-light">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -13,16 +13,49 @@
       --border:rgba(15,23,42,0.08);
       --shadow:0 10px 30px rgba(15,23,42,0.08);
       --shadow-lg:0 20px 50px rgba(15,23,42,0.12);
+      --nav-bg:rgba(255,255,255,0.72);
+      --nav-border:rgba(255,255,255,0.75);
+      --panel-bg:rgba(255,255,255,0.78);
+      --panel-strong:rgba(255,255,255,0.84);
+      --chip-bg:rgba(255,255,255,0.85);
+      --btn-secondary-bg:rgba(255,255,255,0.82);
+      --hero-ring:rgba(255,255,255,0.8);
+      --body-grad-1:rgba(96,165,250,0.10);
+      --body-grad-2:rgba(244,114,182,0.10);
+      --body-bg-start:#f8fafc;
+      --body-bg-end:#f5f7fb;
+      --link:#2563eb;
+    }
+
+    html.theme-dark{
+      --text:#e5e7eb;
+      --muted:#9ca3af;
+      --border:rgba(255,255,255,0.09);
+      --shadow:0 10px 30px rgba(0,0,0,0.28);
+      --shadow-lg:0 20px 50px rgba(0,0,0,0.34);
+      --nav-bg:rgba(17,24,39,0.72);
+      --nav-border:rgba(255,255,255,0.06);
+      --panel-bg:rgba(17,24,39,0.72);
+      --panel-strong:rgba(17,24,39,0.84);
+      --chip-bg:rgba(17,24,39,0.84);
+      --btn-secondary-bg:rgba(17,24,39,0.82);
+      --hero-ring:rgba(31,41,55,0.95);
+      --body-grad-1:rgba(59,130,246,0.14);
+      --body-grad-2:rgba(236,72,153,0.12);
+      --body-bg-start:#0b1220;
+      --body-bg-end:#111827;
+      --link:#60a5fa;
     }
 
     html { scroll-behavior: smooth; }
 
     body{
       background:
-        radial-gradient(circle at top left, rgba(96,165,250,0.10), transparent 28%),
-        radial-gradient(circle at 85% 10%, rgba(244,114,182,0.10), transparent 24%),
-        linear-gradient(180deg, #f8fafc 0%, #f5f7fb 100%);
+        radial-gradient(circle at top left, var(--body-grad-1), transparent 28%),
+        radial-gradient(circle at 85% 10%, var(--body-grad-2), transparent 24%),
+        linear-gradient(180deg, var(--body-bg-start) 0%, var(--body-bg-end) 100%);
       color:var(--text);
+      transition: background-color .3s ease, color .3s ease;
     }
 
     .section-wrap{
@@ -32,10 +65,10 @@
     }
 
     .nav-shell{
-      background:rgba(255,255,255,0.72);
+      background:var(--nav-bg);
       backdrop-filter:blur(12px);
       -webkit-backdrop-filter:blur(12px);
-      border:1px solid rgba(255,255,255,0.75);
+      border:1px solid var(--nav-border);
       box-shadow:var(--shadow);
     }
 
@@ -83,6 +116,12 @@
       margin-bottom:22px;
     }
 
+    html.theme-dark .eyebrow{
+      background:rgba(96,165,250,0.10);
+      border-color:rgba(96,165,250,0.18);
+      color:#93c5fd;
+    }
+
     .hero-title{
       font-size:clamp(3rem, 8vw, 6rem);
       line-height:.92;
@@ -96,6 +135,11 @@
       color:#2563eb;
       font-weight:700;
       margin:0 0 14px;
+    }
+
+    html.theme-dark .hero-role,
+    html.theme-dark .section-kicker{
+      color:#93c5fd;
     }
 
     .hero-meta{
@@ -144,8 +188,8 @@
     }
 
     .btn-secondary{
-      color:#111827;
-      background:rgba(255,255,255,0.82);
+      color:var(--text);
+      background:var(--btn-secondary-bg);
       border:1px solid var(--border);
       box-shadow:var(--shadow);
     }
@@ -185,9 +229,8 @@
       height:280px;
       object-fit:cover;
       border-radius:999px;
-      border:10px solid rgba(255,255,255,0.8);
+      border:10px solid var(--hero-ring);
       box-shadow:var(--shadow-lg);
-      background:#fff;
       display:block;
     }
 
@@ -206,8 +249,8 @@
 
     .soft-panel{
       border-radius:24px;
-      background:rgba(255,255,255,0.78);
-      border:1px solid rgba(15,23,42,0.08);
+      background:var(--panel-bg);
+      border:1px solid var(--border);
       box-shadow:var(--shadow);
     }
 
@@ -243,8 +286,8 @@
       gap:10px;
       padding:12px 16px;
       border-radius:999px;
-      background:rgba(255,255,255,0.85);
-      border:1px solid rgba(15,23,42,0.08);
+      background:var(--chip-bg);
+      border:1px solid var(--border);
       box-shadow:var(--shadow);
       font-weight:600;
       transition:transform .25s ease, box-shadow .25s ease;
@@ -256,8 +299,8 @@
     }
 
     .project-card{
-      background:rgba(255,255,255,0.84);
-      border:1px solid rgba(15,23,42,0.08);
+      background:var(--panel-strong);
+      border:1px solid var(--border);
       border-radius:22px;
       overflow:hidden;
       box-shadow:var(--shadow);
@@ -335,10 +378,71 @@
     .reveal-delay-4{ transition-delay: .32s; }
     .reveal-delay-5{ transition-delay: .40s; }
 
+    .theme-toggle{
+      width:44px;
+      height:44px;
+      border-radius:14px;
+      border:1px solid var(--border);
+      background:var(--chip-bg);
+      color:var(--text);
+      box-shadow:var(--shadow);
+      display:grid;
+      place-items:center;
+      transition:.2s ease;
+    }
+
+    .theme-toggle:hover{
+      transform:translateY(-2px);
+    }
+
+    .contact-grid{
+      display:grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap:24px;
+    }
+
+    .contact-link{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      padding:14px 16px;
+      border-radius:16px;
+      background:var(--chip-bg);
+      border:1px solid var(--border);
+      box-shadow:var(--shadow);
+      color:var(--text);
+      text-decoration:none;
+      transition:.2s ease;
+    }
+
+    .contact-link:hover{
+      transform:translateY(-2px);
+      box-shadow:var(--shadow-lg);
+    }
+
+    .footer{
+      padding:28px 0 50px;
+      color:var(--muted);
+      font-size:.95rem;
+    }
+
+    .footer-line{
+      border-top:1px solid var(--border);
+      padding-top:24px;
+    }
+
+    .text-link{
+      color:var(--link);
+    }
+
     @media (max-width: 900px){
       .hero-grid{
         grid-template-columns:1fr;
         text-align:center;
+      }
+
+      .hero-visual{
+        order:-1;
       }
 
       .hero-actions{
@@ -360,6 +464,10 @@
         width:240px;
         height:240px;
       }
+
+      .contact-grid{
+        grid-template-columns:1fr;
+      }
     }
 
     @media (prefers-reduced-motion: reduce){
@@ -369,7 +477,9 @@
 
       .btn-modern,
       .project-card,
-      .skill-chip{
+      .skill-chip,
+      .theme-toggle,
+      .contact-link{
         transition:none;
       }
 
@@ -385,31 +495,39 @@
     }
   </style>
 </head>
-<body class="text-gray-900">
+<body>
   <header class="fixed top-0 left-0 right-0 z-50">
     <div class="section-wrap pt-4">
       <div class="nav-shell rounded-2xl px-5 py-4 flex items-center justify-between reveal is-visible">
-        <a href="#home" class="flex items-center gap-3 no-underline text-gray-900">
+        <a href="#home" class="flex items-center gap-3 no-underline" style="color:var(--text);">
           <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-600 to-violet-600 text-white grid place-items-center font-bold">
             M
           </div>
           <div>
             <div class="font-bold leading-none">Mosab Awad</div>
-            <div class="text-sm text-gray-500 leading-none mt-1">Portfolio</div>
+            <div class="text-sm leading-none mt-1" style="color:var(--muted);">Portfolio</div>
           </div>
         </a>
 
-        <nav class="hidden md:flex items-center gap-6 text-sm font-medium text-gray-600">
-          <a href="#about" class="hover:text-gray-900">About</a>
-          <a href="#skills" class="hover:text-gray-900">Skills</a>
-          <a href="#projects" class="hover:text-gray-900">Projects</a>
-          <a href="#experience" class="hover:text-gray-900">Experience</a>
+        <nav class="hidden md:flex items-center gap-6 text-sm font-medium" style="color:var(--muted);">
+          <a href="#about" class="hover:opacity-100" style="color:inherit;">About</a>
+          <a href="#skills" class="hover:opacity-100" style="color:inherit;">Skills</a>
+          <a href="#projects" class="hover:opacity-100" style="color:inherit;">Projects</a>
+          <a href="#experience" class="hover:opacity-100" style="color:inherit;">Experience</a>
+          <a href="#contact" class="hover:opacity-100" style="color:inherit;">Contact</a>
         </nav>
 
-        <a href="https://www.linkedin.com/in/mosab-awad/" target="_blank"
-           class="w-11 h-11 rounded-xl bg-white border border-gray-200 grid place-items-center text-blue-600 hover:-translate-y-0.5 transition">
-          <i class="fab fa-linkedin text-xl"></i>
-        </a>
+        <div class="flex items-center gap-3">
+          <button id="themeToggle" class="theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">
+            <i class="fa-solid fa-moon"></i>
+          </button>
+
+          <a href="https://www.linkedin.com/in/mosab-awad/" target="_blank"
+             class="w-11 h-11 rounded-xl grid place-items-center hover:-translate-y-0.5 transition"
+             style="background:var(--chip-bg); border:1px solid var(--border); color:#2563eb; box-shadow:var(--shadow);">
+            <i class="fab fa-linkedin text-xl"></i>
+          </a>
+        </div>
       </div>
     </div>
   </header>
@@ -431,7 +549,7 @@
 
             <p class="hero-meta">
               Riyadh, KSA ·
-              <a href="mailto:mosab.awad.ahmed.alhadi@gmail.com" class="underline decoration-gray-300 underline-offset-4">
+              <a href="mailto:mosab.awad.ahmed.alhadi@gmail.com" class="underline underline-offset-4" style="text-decoration-color:rgba(156,163,175,.45); color:inherit;">
                 mosab.awad.ahmed.alhadi@gmail.com
               </a>
             </p>
@@ -520,10 +638,10 @@
             <img src="server-monitoring-tool.png" alt="Server Performance Stats" class="project-thumb">
             <div class="p-6 project-body">
               <h3 class="text-xl font-bold mb-2">Server Performance Stats</h3>
-              <p class="text-gray-600 leading-7 mb-5 flex-1">
+              <p class="leading-7 mb-5 flex-1" style="color:var(--muted);">
                 A Bash-based monitoring tool that analyzes CPU, memory, disk usage, and key system information for quick server health checks.
               </p>
-              <a href="https://github.com/MosabAwadAhmedAlhadi/ServerPerformanceStats" target="_blank" class="text-blue-600 font-semibold hover:underline">View on GitHub</a>
+              <a href="https://github.com/MosabAwadAhmedAlhadi/ServerPerformanceStats" target="_blank" class="font-semibold hover:underline text-link">View on GitHub</a>
             </div>
           </article>
 
@@ -531,10 +649,10 @@
             <img src="Log-Archiving.jpg" alt="Log Archive Tool" class="project-thumb">
             <div class="p-6 project-body">
               <h3 class="text-xl font-bold mb-2">Log Archive Tool</h3>
-              <p class="text-gray-600 leading-7 mb-5 flex-1">
+              <p class="leading-7 mb-5 flex-1" style="color:var(--muted);">
                 An automation script for archiving log files with date-based compression, organized storage, and simple tracking.
               </p>
-              <a href="https://github.com/MosabAwadAhmedAlhadi/log-archive-tool" target="_blank" class="text-blue-600 font-semibold hover:underline">View on GitHub</a>
+              <a href="https://github.com/MosabAwadAhmedAlhadi/log-archive-tool" target="_blank" class="font-semibold hover:underline text-link">View on GitHub</a>
             </div>
           </article>
 
@@ -542,10 +660,10 @@
             <img src="nginx-log.png" alt="Nginx Log Analyser" class="project-thumb">
             <div class="p-6 project-body">
               <h3 class="text-xl font-bold mb-2">Nginx Log Analyser</h3>
-              <p class="text-gray-600 leading-7 mb-5 flex-1">
+              <p class="leading-7 mb-5 flex-1" style="color:var(--muted);">
                 A script that extracts useful insights from Nginx access logs, including top IPs, URLs, and user agents.
               </p>
-              <a href="https://github.com/MosabAwadAhmedAlhadi/nginx-log-analyser" target="_blank" class="text-blue-600 font-semibold hover:underline">View on GitHub</a>
+              <a href="https://github.com/MosabAwadAhmedAlhadi/nginx-log-analyser" target="_blank" class="font-semibold hover:underline text-link">View on GitHub</a>
             </div>
           </article>
 
@@ -553,10 +671,10 @@
             <img src="github-action.png" alt="GitHub Actions Deployment Workflow" class="project-thumb">
             <div class="p-6 project-body">
               <h3 class="text-xl font-bold mb-2">GitHub Actions Deployment Workflow</h3>
-              <p class="text-gray-600 leading-7 mb-5 flex-1">
+              <p class="leading-7 mb-5 flex-1" style="color:var(--muted);">
                 An automated GitHub Pages deployment workflow using GitHub Actions for a sample HTML project.
               </p>
-              <a href="https://github.com/MosabAwadAhmedAlhadi/gh-deployment-workflow" target="_blank" class="text-blue-600 font-semibold hover:underline">View on GitHub</a>
+              <a href="https://github.com/MosabAwadAhmedAlhadi/gh-deployment-workflow" target="_blank" class="font-semibold hover:underline text-link">View on GitHub</a>
             </div>
           </article>
 
@@ -564,10 +682,10 @@
             <img src="ssh.png" alt="SSH Remote Server Setup on AWS EC2" class="project-thumb">
             <div class="p-6 project-body">
               <h3 class="text-xl font-bold mb-2">SSH Remote Server Setup on AWS EC2</h3>
-              <p class="text-gray-600 leading-7 mb-5 flex-1">
+              <p class="leading-7 mb-5 flex-1" style="color:var(--muted);">
                 A secure remote server setup demonstrating SSH access with two key pairs and fail2ban protection against brute-force attacks.
               </p>
-              <a href="https://github.com/MosabAwadAhmedAlhadi/ssh-remote-server-setup" target="_blank" class="text-blue-600 font-semibold hover:underline">View on GitHub</a>
+              <a href="https://github.com/MosabAwadAhmedAlhadi/ssh-remote-server-setup" target="_blank" class="font-semibold hover:underline text-link">View on GitHub</a>
             </div>
           </article>
         </div>
@@ -586,8 +704,8 @@
         <div class="grid gap-8 mt-8">
           <article class="soft-panel p-8 timeline-item reveal reveal-delay-1">
             <h3 class="text-xl font-bold">Head of IT Department · MASS-CO</h3>
-            <p class="text-gray-500 mt-1">Riyadh, KSA · 2021 – Present</p>
-            <ul class="list-disc pl-5 text-gray-700 mt-4 space-y-2 leading-7">
+            <p class="mt-1" style="color:var(--muted);">Riyadh, KSA · 2021 – Present</p>
+            <ul class="list-disc pl-5 mt-4 space-y-2 leading-7" style="color:var(--muted);">
               <li>Spearheaded Odoo implementation across departments.</li>
               <li>Developed and customized the Odoo website and redesigned the default portal.</li>
               <li>Led third-party system integrations and aligned Odoo with internal operations.</li>
@@ -597,8 +715,8 @@
 
           <article class="soft-panel p-8 timeline-item reveal reveal-delay-2">
             <h3 class="text-xl font-bold">Odoo Developer · Expert Co. Ltd</h3>
-            <p class="text-gray-500 mt-1">Riyadh, KSA · 2019 – 2021</p>
-            <ul class="list-disc pl-5 text-gray-700 mt-4 space-y-2 leading-7">
+            <p class="mt-1" style="color:var(--muted);">Riyadh, KSA · 2019 – 2021</p>
+            <ul class="list-disc pl-5 mt-4 space-y-2 leading-7" style="color:var(--muted);">
               <li>Delivered tailored Odoo solutions for major clients and government sectors.</li>
               <li>Enhanced ERP features for SOCPA and ensured system compliance.</li>
               <li>Developed modules and automation for the Ekhaa Project.</li>
@@ -608,8 +726,8 @@
 
           <article class="soft-panel p-8 timeline-item reveal reveal-delay-3">
             <h3 class="text-xl font-bold">Junior Odoo Developer · NCTR</h3>
-            <p class="text-gray-500 mt-1">Khartoum, Sudan · 2018 – 2019</p>
-            <ul class="list-disc pl-5 text-gray-700 mt-4 space-y-2 leading-7">
+            <p class="mt-1" style="color:var(--muted);">Khartoum, Sudan · 2018 – 2019</p>
+            <ul class="list-disc pl-5 mt-4 space-y-2 leading-7" style="color:var(--muted);">
               <li>Contributed to the Sudanese Zakat Chamber project from analysis to deployment.</li>
               <li>Developed modules and conducted end-user training.</li>
             </ul>
@@ -617,9 +735,85 @@
         </div>
       </div>
     </section>
+
+    <section id="contact" class="section pt-0">
+      <div class="section-wrap">
+        <div class="soft-panel p-8 md:p-10 reveal">
+          <div class="section-kicker">
+            <i class="fa-solid fa-paper-plane"></i> Contact
+          </div>
+          <h2 class="section-title">Let’s build something impactful.</h2>
+          <p class="section-copy mb-8">
+            I’m open to discussing ERP systems, Odoo customization, business portals, automation workflows, and technical leadership opportunities.
+          </p>
+
+          <div class="contact-grid">
+            <div class="grid gap-4">
+              <a class="contact-link" href="mailto:mosab.awad.ahmed.alhadi@gmail.com">
+                <i class="fa-solid fa-envelope text-blue-500"></i>
+                <span>mosab.awad.ahmed.alhadi@gmail.com</span>
+              </a>
+
+              <a class="contact-link" href="https://www.linkedin.com/in/mosab-awad/" target="_blank">
+                <i class="fab fa-linkedin text-blue-600"></i>
+                <span>linkedin.com/in/mosab-awad</span>
+              </a>
+
+              <a class="contact-link" href="#projects">
+                <i class="fa-solid fa-folder-open text-violet-500"></i>
+                <span>Browse selected projects</span>
+              </a>
+            </div>
+
+            <div class="soft-panel p-6 md:p-8">
+              <h3 class="text-xl font-bold mb-3">Current Focus</h3>
+              <p class="leading-8" style="color:var(--muted);">
+                Delivering scalable Odoo solutions, improving operational workflows, and building production-ready systems with a strong engineering foundation.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 
+  <footer class="footer">
+    <div class="section-wrap">
+      <div class="footer-line flex flex-col md:flex-row items-center justify-between gap-4">
+        <p>© <span id="year"></span> Mosab Awad. All rights reserved.</p>
+        <div class="flex items-center gap-5">
+          <a href="#home" class="hover:underline" style="color:inherit;">Back to top</a>
+          <a href="mailto:mosab.awad.ahmed.alhadi@gmail.com" class="hover:underline" style="color:inherit;">Email</a>
+          <a href="https://www.linkedin.com/in/mosab-awad/" target="_blank" class="hover:underline" style="color:inherit;">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
   <script>
+    const root = document.documentElement;
+    const themeToggle = document.getElementById("themeToggle");
+    const themeIcon = themeToggle.querySelector("i");
+    const savedTheme = localStorage.getItem("mosab-theme");
+
+    function applyTheme(theme) {
+      root.classList.remove("theme-light", "theme-dark");
+      root.classList.add(theme);
+      const isDark = theme === "theme-dark";
+      themeIcon.className = isDark ? "fa-solid fa-sun" : "fa-solid fa-moon";
+      themeToggle.setAttribute("aria-pressed", String(isDark));
+      localStorage.setItem("mosab-theme", theme);
+    }
+
+    applyTheme(savedTheme || "theme-dark");
+
+    themeToggle.addEventListener("click", () => {
+      const next = root.classList.contains("theme-dark") ? "theme-light" : "theme-dark";
+      applyTheme(next);
+    });
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+
     const canvas = document.getElementById("heroCanvas");
     const ctx = canvas.getContext("2d");
 
@@ -758,8 +952,7 @@
       currentX: 0,
       currentY: 0,
       targetX: 0,
-      targetY: 0,
-      raf: null
+      targetY: 0
     };
 
     function animateParallax() {
@@ -769,7 +962,7 @@
       heroImageWrap.style.transform =
         `translate3d(${parallax.currentX}px, ${parallax.currentY}px, 0)`;
 
-      parallax.raf = requestAnimationFrame(animateParallax);
+      requestAnimationFrame(animateParallax);
     }
 
     heroVisual.addEventListener("mousemove", (e) => {
